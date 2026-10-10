@@ -11,7 +11,7 @@ The site's data lives in `src/data/festival.ts`; keep both in step.
   spoken word, civic leadership and youth creative enterprise.
 - **2026 theme:** Artistic Expression for Advocacy.
 - **When:** Saturday 5 December 2026, 10:00 AM to 3:00 PM.
-- **Where:** Cinema Hall, June 13 Cultural Centre, Abeokuta, Ogun State.
+- **Where:** Cinema Hall, June 12 Cultural Centre, Abeokuta, Ogun State.
 - **Audience:** a curated 200 to 250 student scholars, undergraduates,
   educators and cultural leaders.
 - **Focus areas and SDGs:** mental health and emotional wellness (SDG 3),

@@ -20,7 +20,7 @@ export const FESTIVAL = {
   time: "10:00 AM to 3:00 PM",
   /** 10:00 West Africa Time (UTC+1). */
   startsAt: "2026-12-05T10:00:00+01:00",
-  venue: "Cinema Hall, June 13 Cultural Centre",
+  venue: "Cinema Hall, June 12 Cultural Centre",
   city: "Abeokuta, Ogun State",
   audience: "200–250",
   partnerDeadline: "15 November 2026",
@@ -86,7 +86,7 @@ export const KEY_DATES = [
   { when: "September 2026", what: "School outreach and registration open as schools resume" },
   { when: "Mid-October 2026", what: "All school entries and registrations close", highlight: true },
   { when: "October to early December", what: "Junior written entries and Senior videos are collected and scored by the judging panel" },
-  { when: "Saturday, 5 December 2026", what: "Festival day, 10:00 AM to 3:00 PM, Cinema Hall, June 13 Cultural Centre, Abeokuta" },
+  { when: "Saturday, 5 December 2026", what: "Festival day, 10:00 AM to 3:00 PM, Cinema Hall, June 12 Cultural Centre, Abeokuta" },
 ] as const;
 
 export const RUN_OF_SHOW = [
@@ -209,6 +209,6 @@ export const mailto = (subject: string, body = "") =>
 // Brochures in public/downloads. The proposal's bank account is removed:
 // payment details go to confirmed partners by the Secretariat only.
 export const DOWNLOADS = {
-  school: { href: "/downloads/OPF-2026-School-Entry-Brochure.pdf", label: "School entry brochure", size: "54 KB" },
+  school: { href: "/downloads/OPF-2026-School-Entry-Brochure.pdf", label: "School entry brochure", size: "52 KB" },
   sponsorship: { href: "/downloads/OPF-2026-Sponsorship-Proposal.pdf", label: "Sponsorship proposal", size: "1.5 MB" },
 } as const;
