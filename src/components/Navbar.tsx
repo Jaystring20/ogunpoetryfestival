@@ -9,6 +9,7 @@ const LINKS = [
   { to: "/#competition", label: "Competition" },
   { to: "/#programme", label: "Programme" },
   { to: "/#about", label: "About" },
+  { to: "/#gallery", label: "Gallery" },
 ];
 
 export function Navbar() {

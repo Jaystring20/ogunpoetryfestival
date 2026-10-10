@@ -4,7 +4,10 @@ import { Seo } from "@/components/Seo";
 import { Tiles } from "@/components/Tiles";
 import { Reveal } from "@/components/Reveal";
 import { Countdown } from "@/components/Countdown";
-import { BACKING, COMMITTEE, FESTIVAL, FOCUS_AREAS, MISSION, RUN_OF_SHOW, TRACKS, TRACK_RECORD, mailto } from "@/data/festival";
+import { Photo } from "@/components/Photo";
+import { DownloadLink } from "@/components/DownloadLink";
+import { PHOTOS } from "@/data/photos";
+import { BACKING, COMMITTEE, DOWNLOADS, FESTIVAL, FOCUS_AREAS, MISSION, RUN_OF_SHOW, TRACKS, TRACK_RECORD, mailto } from "@/data/festival";
 import { TONE_BORDER, TONE_FILL, TONE_TEXT, cn, type Tone } from "@/lib/utils";
 
 const SectionHead = ({ kicker, title, lead, tone = "sun" }: { kicker: string; title: string; lead?: string; tone?: Tone }) => (
@@ -68,6 +71,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Faces of the festival */}
+      <section aria-label="Scenes from past festivals" className="pb-px">
+        <ul className="grid grid-cols-2 gap-px lg:grid-cols-4">
+          {(
+            [
+              [PHOTOS.performerBanner, undefined],
+              [PHOTOS.readerBeret, "56% 50%"],
+              [PHOTOS.slamJunior, "50% 30%"],
+              [PHOTOS.audienceApplause, "50% 40%"],
+            ] as const
+          ).map(([p, pos]) => (
+            <li key={p.src}>
+              <Photo photo={p} position={pos} frame="aspect-[4/5]" sizes="(min-width: 1024px) 25vw, 50vw" />
+            </li>
+          ))}
+        </ul>
+      </section>
+
       {/* Numbers */}
       <section aria-label="At a glance" className="border-y border-line">
         <div className="wrap">
@@ -92,7 +113,12 @@ export default function Home() {
       {/* The festival: mission and focus areas */}
       <section id="festival" className="scroll-mt-20 py-24 sm:py-32">
         <div className="wrap">
-          <SectionHead kicker="The festival" title="Poetry with a purpose." lead={MISSION} />
+          <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
+            <SectionHead kicker="The festival" title="Poetry with a purpose." lead={MISSION} />
+            <Reveal>
+              <Photo photo={PHOTOS.circle} frame="aspect-[7/5]" />
+            </Reveal>
+          </div>
           <ul className="mt-16 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-5">
             {FOCUS_AREAS.map((f, i) => (
               <li key={f.title} className="bg-ink">
@@ -140,13 +166,27 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+          <div className="mt-16 grid gap-6 md:grid-cols-[1fr_1.4fr_1.4fr]">
+            <Reveal>
+              <Photo photo={PHOTOS.slamBlazer} frame="aspect-[5/7]" caption="On stage" sizes="(min-width: 768px) 25vw, 100vw" />
+            </Reveal>
+            <Reveal delay={0.08} className="md:self-end">
+              <Photo photo={PHOTOS.awardSecond} frame="aspect-[7/5]" caption="Prize giving" sizes="(min-width: 768px) 35vw, 100vw" />
+            </Reveal>
+            <Reveal delay={0.16} className="md:self-end">
+              <Photo photo={PHOTOS.awardJunior} frame="aspect-[7/5]" caption="Junior category, third position" sizes="(min-width: 768px) 35vw, 100vw" />
+            </Reveal>
+          </div>
           <Reveal className="mt-12 flex flex-col gap-4 border border-line p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
             <p className="max-w-xl text-lg text-paper/90">
-              <span className="font-semibold text-paper">Registering a school or institution?</span> Enrolment is through the Secretariat. Write to us and we'll send the details.
+              <span className="font-semibold text-paper">Registering a school or institution?</span> The school entry brochure has every category, delegation size and key date. Enrolment is through the Secretariat.
             </p>
-            <a href={mailto(`School registration: OPF ${FESTIVAL.year}`, "School or institution:\nCategory (Junior, Senior or Tertiary):\nContact person and phone:\n")} className="btn-sun shrink-0">
-              Register interest
-            </a>
+            <div className="flex shrink-0 flex-col gap-3 sm:items-end">
+              <a href={mailto(`School registration: OPF ${FESTIVAL.year}`, "School or institution:\nCategory (Junior, Senior or Tertiary):\nContact person and phone:\n")} className="btn-sun">
+                Register interest
+              </a>
+              <DownloadLink file={DOWNLOADS.school} className="text-left" />
+            </div>
           </Reveal>
         </div>
       </section>
@@ -156,7 +196,9 @@ export default function Home() {
         <div className="wrap grid gap-16 lg:grid-cols-[1fr_1.3fr]">
           <div>
             <SectionHead kicker="Programme" tone="teal" title="The day, hour by hour." lead={`${FESTIVAL.date}, ${FESTIVAL.venue}, ${FESTIVAL.city}.`} />
-            <Tiles cols={4} rows={2} seed={11} className="mt-12 hidden h-[160px] w-[320px] lg:block" />
+            <Reveal className="mt-12 hidden max-w-[360px] lg:block">
+              <Photo photo={PHOTOS.host} frame="aspect-[5/7]" sizes="360px" />
+            </Reveal>
           </div>
           <ol className="border-t border-line">
             {RUN_OF_SHOW.map((r, i) => (
@@ -223,8 +265,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Gallery: open mics, workshops and the stage */}
+      <section id="gallery" className="scroll-mt-20 py-24 sm:py-32">
+        <div className="wrap">
+          <SectionHead
+            kicker="Gallery"
+            tone="teal"
+            title="Moments from the mic."
+            lead="Open mics, workshops and festival days. This is what it looks like when young people take the stage."
+          />
+          <ul className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[PHOTOS.reading, PHOTOS.spokenWord, PHOTOS.bench, PHOTOS.readerFloral, PHOTOS.speakerMural].map((p, i) => (
+              <li key={p.src} className={cn(i === 1 && "sm:row-span-2 lg:col-start-2 lg:row-start-1")}>
+                <Reveal className="h-full">
+                  <Photo
+                    photo={p}
+                    className="h-full"
+                    frame={i === 1 ? "aspect-[5/7] sm:aspect-auto sm:h-full" : "aspect-[7/5]"}
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  />
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* Partner call to action */}
-      <section className="relative overflow-hidden py-24 sm:py-32">
+      <section className="relative overflow-hidden bg-ink-raised py-24 sm:py-32">
         <div className="wrap relative grid items-center gap-12 lg:grid-cols-[1.4fr_1fr]">
           <Reveal>
             <p className="label text-sun">Partner with OPF {FESTIVAL.year}</p>

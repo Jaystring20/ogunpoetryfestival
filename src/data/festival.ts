@@ -181,3 +181,10 @@ export const VENDOR_BAZAAR = {
 
 export const mailto = (subject: string, body = "") =>
   `mailto:${FESTIVAL.contact.email}?subject=${encodeURIComponent(subject)}${body ? `&body=${encodeURIComponent(body)}` : ""}`;
+
+// Brochures in public/downloads. The proposal's bank account is removed:
+// payment details go to confirmed partners by the Secretariat only.
+export const DOWNLOADS = {
+  school: { href: "/downloads/OPF-2026-School-Entry-Brochure.pdf", label: "School entry brochure", size: "54 KB" },
+  sponsorship: { href: "/downloads/OPF-2026-Sponsorship-Proposal.pdf", label: "Sponsorship proposal", size: "1.5 MB" },
+} as const;

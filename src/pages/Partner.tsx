@@ -2,7 +2,10 @@ import { ArrowRight, Check } from "lucide-react";
 import { Seo } from "@/components/Seo";
 import { Tiles } from "@/components/Tiles";
 import { Reveal } from "@/components/Reveal";
-import { FESTIVAL, FOCUS_AREAS, IN_KIND, TIERS, VENDOR_BAZAAR, WHY_PARTNER, mailto } from "@/data/festival";
+import { Photo } from "@/components/Photo";
+import { DownloadLink } from "@/components/DownloadLink";
+import { PHOTOS } from "@/data/photos";
+import { DOWNLOADS, FESTIVAL, FOCUS_AREAS, IN_KIND, TIERS, VENDOR_BAZAAR, WHY_PARTNER, mailto } from "@/data/festival";
 import { TONE_BORDER, TONE_FILL, TONE_TEXT, cn, type Tone } from "@/lib/utils";
 
 const tierMail = (tier: string) =>
@@ -31,6 +34,9 @@ export default function Partner() {
           <p className="mt-10 inline-block bg-sky px-4 py-3 font-display font-bold text-ink">
             Confirm your tier by {FESTIVAL.partnerDeadline} to appear on every publicity and production material.
           </p>
+          <div className="mt-8">
+            <DownloadLink file={DOWNLOADS.sponsorship} className="text-left" />
+          </div>
         </div>
       </section>
 
@@ -43,6 +49,13 @@ export default function Partner() {
               <p className="mt-3 text-muted">{w.detail}</p>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      <section aria-label="At past festivals" className="pt-px">
+        <div className="grid gap-px sm:grid-cols-[1.4fr_1fr]">
+          <Photo photo={PHOTOS.awardFirst} frame="aspect-[7/5] sm:h-full sm:aspect-auto" sizes="(min-width: 640px) 60vw, 100vw" />
+          <Photo photo={PHOTOS.audienceClapping} frame="aspect-[5/7] sm:aspect-[4/5]" position="50% 30%" sizes="(min-width: 640px) 40vw, 100vw" />
         </div>
       </section>
 
@@ -138,12 +151,15 @@ export default function Partner() {
           <div className="max-w-2xl">
             <h2 className="display text-4xl leading-[0.98] sm:text-5xl">Ready to partner?</h2>
             <p className="mt-4 text-lg text-muted">
-              Write to the Secretariat for the full proposal or to confirm your tier. Payment details are shared with confirmed partners, and every payment receives an official acknowledgement.
+              Download the full proposal, or write to the Secretariat to confirm your tier. Payment details are shared with confirmed partners, and every payment receives an official acknowledgement.
             </p>
           </div>
-          <a href={tierMail("Partnership")} className="btn-sun shrink-0">
-            Email the Secretariat <ArrowRight className="h-5 w-5" />
-          </a>
+          <div className="flex shrink-0 flex-col gap-3 lg:items-end">
+            <a href={tierMail("Partnership")} className="btn-sun">
+              Email the Secretariat <ArrowRight className="h-5 w-5" />
+            </a>
+            <DownloadLink file={DOWNLOADS.sponsorship} className="text-left" />
+          </div>
         </div>
       </section>
     </>
