@@ -3,7 +3,7 @@
 The official site of the Ogun Poetry Festival (OPF), an annual festival of
 poetry, performance and advocacy in Ogun State, Nigeria, founded in 2023.
 The 2026 edition, "Artistic Expression for Advocacy", is on Saturday
-5 December 2026, 10:00 to 15:00, at the Cinema Hall, June 13 Cultural Centre,
+5 December 2026, 10:00 to 15:00, at the Cinema Hall, June 12 Cultural Centre,
 Abeokuta.
 
 This file is the handoff for anyone (or any Claude session) continuing the

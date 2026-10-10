@@ -2,7 +2,7 @@
 
 The website of the Ogun Poetry Festival, *Creativity for Humanity*.
 2026 edition: **Artistic Expression for Advocacy**, Saturday 5 December 2026,
-Cinema Hall, June 13 Cultural Centre, Abeokuta.
+Cinema Hall, June 12 Cultural Centre, Abeokuta.
 
 ```bash
 npm install
