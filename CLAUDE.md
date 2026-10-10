@@ -25,8 +25,9 @@ Check both before every commit; both must pass.
 | Path | What |
 | --- | --- |
 | `src/data/festival.ts` | **Every fact on the site**: dates, venue, theme, tracks, prizes, run of show, tiers, committee, contacts. Change facts here only. |
-| `src/pages/Home.tsx` | Home: hero and countdown, numbers, focus areas (SDGs), competition tracks, run of show, track record, backing, committee, partner CTA. |
-| `src/pages/Partner.tsx` | `/partner`: why partner, four sponsorship tiers, in-kind partners, Vendor Bazaar, impact reporting. |
+| `src/pages/Home.tsx` | Home: hero and countdown, photo band, numbers, focus areas (SDGs), competition tracks and prize photos, run of show, track record, backing, committee, gallery, partner CTA. |
+| `src/pages/Partner.tsx` | `/partner`: why partner, photo band, four sponsorship tiers, in-kind partners, Vendor Bazaar, impact reporting. |
+| `src/data/photos.ts`, `src/assets/photos/` | Real OPF event photos (1600px plus an `-800` copy each) with alt text. Show them with `<Photo>` (`src/components/Photo.tsx`). |
 | `src/components/Tiles.tsx` | The geometric tile motif (see Design). |
 | `src/components/Navbar.tsx`, `Footer.tsx`, `Countdown.tsx`, `Seo.tsx` | Shell pieces. |
 | `src/assets/opf-logo.png` | Full-colour logo, transparent background. |
@@ -79,12 +80,16 @@ prospectus. Keep it that way.
 Done:
 - Home and Partner pages with all 2026 content from the prospectus and proposal.
 - Brand system, logo, favicon, social image, countdown, responsive navigation.
+- Real photos from past events across Home (photo band, festival, competition,
+  programme, gallery) and Partner. `team-banner` is in `PHOTOS` but not shown
+  until the organisers confirm who is in it (and ideally send a larger copy).
 
 Next, roughly in priority order:
 1. **Domain and deploy.** Connect the repo to a new Vercel project; confirm the
    domain and update `SITE` in `src/components/Seo.tsx`.
-2. **Real photos.** Add a Gallery section from past editions (2023 outreach,
-   open mics, 2025 "The Truth in Our Scars"). Needs the original photo files.
+2. **Photo captions and credits.** Confirm which event and year each set is
+   from (Kuta Art Gallery sessions; the hall with the "Poetry Slam" banner),
+   and whether to credit Grade A Shots. Captions stay generic until then.
 3. **School and institution registration.** Replace the `mailto` with a form
    that stores entries (Supabase) and emails the Secretariat (Resend):
    school, category (Junior, Senior, Tertiary), contact, students.

@@ -88,7 +88,7 @@ site or in this repo (a personal account).
 ## Open questions for the organisers
 
 - Domain name, and social media handles.
-- Original photos from past editions (the PDFs only have low-resolution copies).
+- Which event and year each photo set is from, whether to credit the photographer (Grade A Shots), and who is in the five-person group photo.
 - Registration fees or dues for schools, if any ("dues" are mentioned without amounts).
 - Headshots and short bios for the committee.
 - Partner logos, with permission to display them.
