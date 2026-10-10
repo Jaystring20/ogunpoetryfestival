@@ -1,0 +1,102 @@
+# Ogun Poetry Festival website
+
+The official site of the Ogun Poetry Festival (OPF), an annual festival of
+poetry, performance and advocacy in Ogun State, Nigeria, founded in 2023.
+The 2026 edition, "Artistic Expression for Advocacy", is on Saturday
+5 December 2026, 10:00 to 15:00, at the Cinema Hall, June 13 Cultural Centre,
+Abeokuta.
+
+This file is the handoff for anyone (or any Claude session) continuing the
+build. Read it before changing anything.
+
+## Stack
+
+- Vite + React 18 + TypeScript (strict), React Router, react-helmet-async.
+- Tailwind CSS 3 with brand tokens in `src/index.css` and `tailwind.config.ts`.
+- framer-motion for scroll reveals (`src/components/Reveal.tsx`); lucide-react icons.
+- Deploys on Vercel (`vercel.json` rewrites every non-`/api` path to the SPA).
+- No backend yet. Forms are `mailto:` links to the Secretariat for now.
+
+Commands: `npm run dev`, `npm run typecheck`, `npm run build`.
+Check both before every commit; both must pass.
+
+## Where things live
+
+| Path | What |
+| --- | --- |
+| `src/data/festival.ts` | **Every fact on the site**: dates, venue, theme, tracks, prizes, run of show, tiers, committee, contacts. Change facts here only. |
+| `src/pages/Home.tsx` | Home: hero and countdown, numbers, focus areas (SDGs), competition tracks, run of show, track record, backing, committee, partner CTA. |
+| `src/pages/Partner.tsx` | `/partner`: why partner, four sponsorship tiers, in-kind partners, Vendor Bazaar, impact reporting. |
+| `src/components/Tiles.tsx` | The geometric tile motif (see Design). |
+| `src/components/Navbar.tsx`, `Footer.tsx`, `Countdown.tsx`, `Seo.tsx` | Shell pieces. |
+| `src/assets/opf-logo.png` | Full-colour logo, transparent background. |
+| `public/og-image.jpg` | Logo on indigo, used as the social sharing image. |
+| `docs/brief.md` | The source content from the 2026 Prospectus and Sponsorship Proposal, plus open questions. |
+
+## Design
+
+The look is bold, geometric and joyful, taken from the logo and the 2026
+prospectus. Keep it that way.
+
+- **Colour.** Deep indigo ground `#080038` (`bg-ink`), raised panels
+  `bg-ink-raised`. Accents straight from the logo: pink `#F81050`, teal
+  `#08B098`, yellow `#F8C800` (`sun`), plus sky `#29D3EA` from the
+  prospectus, used sparingly. Text is `paper` (near white) and `muted`.
+  Yellow is the primary action colour (`.btn-sun`).
+- **Type.** Archivo for display (`.display`: heavy and set wide, like the
+  poster headlines), Archivo condensed caps for labels, dates and times
+  (`.label`), DM Sans for body, Fraunces italic (`font-verse`) only for
+  poetic lines such as the tagline. Loaded from Google Fonts in `index.html`.
+- **Shape.** Square corners everywhere. The signature motif is blocks of
+  square tiles, each a quarter circle, triangle, half circle or square, in the
+  logo colours: the same geometry as the logo lettering. Use `<Tiles>` with a
+  different `seed` per placement. Don't overuse it: one block per section at
+  most.
+- **Layout.** `.wrap` for the page width. Section rhythm is `py-24 sm:py-32`,
+  alternating `bg-ink` and `bg-ink-raised`. A section starts with a kicker
+  (`.label` in an accent colour), a short display headline and a muted lead.
+- **Motion.** Gentle rise-in on scroll via `<Reveal>`. Everything respects
+  `prefers-reduced-motion`.
+- **Accessibility.** Skip link, visible yellow focus rings, real headings in
+  order, `aria-label`s on icon buttons. Check every page at 390px wide: no
+  sideways scrolling.
+
+## Writing rules
+
+- Plain, warm, confident. Short sentences. Speak to schools, students,
+  creatives and sponsors directly.
+- No em-dashes in visible copy. Use a comma, a colon or a new sentence.
+- Never invent facts, numbers, testimonials, partners or names. If it isn't in
+  `docs/brief.md` or confirmed by the organisers, leave a clearly marked
+  placeholder.
+- Use real photographs of OPF only. Don't use stock or AI images of people
+  presented as OPF participants.
+- Don't publish the remittance bank account on the site; it's a personal
+  account. Payment details go to confirmed partners by the Secretariat.
+
+## Status (head start)
+
+Done:
+- Home and Partner pages with all 2026 content from the prospectus and proposal.
+- Brand system, logo, favicon, social image, countdown, responsive navigation.
+
+Next, roughly in priority order:
+1. **Domain and deploy.** Connect the repo to a new Vercel project; confirm the
+   domain and update `SITE` in `src/components/Seo.tsx`.
+2. **Real photos.** Add a Gallery section from past editions (2023 outreach,
+   open mics, 2025 "The Truth in Our Scars"). Needs the original photo files.
+3. **School and institution registration.** Replace the `mailto` with a form
+   that stores entries (Supabase) and emails the Secretariat (Resend):
+   school, category (Junior, Senior, Tertiary), contact, students.
+4. **Senior Secondary video entries.** Upload or link field for the advocacy
+   video screening.
+5. **Sponsor enquiries.** A form per tier that stores enquiries and alerts the
+   Secretariat; later, a partner logo wall.
+6. **Admin dashboard.** Team sign-in to review registrations, entries,
+   sponsor enquiries and vendor requests; export lists.
+7. **Open mic and workshop events** across the year, with registration and
+   reminders.
+8. **Newsletter and socials.** Social links (not yet supplied) and a signup.
+
+Each backend step needs its own Supabase project, Vercel environment
+variables and an email-sending domain. None exist yet.
