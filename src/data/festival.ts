@@ -120,6 +120,7 @@ export const COMMITTEE = [
   { name: "Joy Udeh", role: "Welfare & Mental Health Director" },
   { name: "Odetunde Ola", role: "Lead Event Strategist" },
   { name: "Halimah Adegbite", role: "Content & Creative Strategist" },
+  { name: "Jeremiah Adeyemi", role: "Programme Coordinator" },
 ] as const;
 
 export const WHY_PARTNER = [
