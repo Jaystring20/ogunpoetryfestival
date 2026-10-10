@@ -32,6 +32,7 @@ Check both before every commit; both must pass.
 | `src/components/Navbar.tsx`, `Footer.tsx`, `Countdown.tsx`, `Seo.tsx` | Shell pieces. |
 | `src/assets/opf-logo.png` | Full-colour logo, transparent background. |
 | `public/og-image.jpg` | Logo on indigo, used as the social sharing image. |
+| `public/downloads/` | Brochures linked from the site (`DOWNLOADS` in `festival.ts`, `<DownloadLink>`): the School Entry Brochure and the Sponsorship Proposal. The proposal's bank account was removed from its last page; any new version must be redacted the same way before it goes in. |
 | `docs/brief.md` | The source content from the 2026 Prospectus and Sponsorship Proposal, plus open questions. |
 
 ## Design

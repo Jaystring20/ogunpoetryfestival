@@ -5,8 +5,9 @@ import { Tiles } from "@/components/Tiles";
 import { Reveal } from "@/components/Reveal";
 import { Countdown } from "@/components/Countdown";
 import { Photo } from "@/components/Photo";
+import { DownloadLink } from "@/components/DownloadLink";
 import { PHOTOS } from "@/data/photos";
-import { BACKING, COMMITTEE, FESTIVAL, FOCUS_AREAS, MISSION, RUN_OF_SHOW, TRACKS, TRACK_RECORD, mailto } from "@/data/festival";
+import { BACKING, COMMITTEE, DOWNLOADS, FESTIVAL, FOCUS_AREAS, MISSION, RUN_OF_SHOW, TRACKS, TRACK_RECORD, mailto } from "@/data/festival";
 import { TONE_BORDER, TONE_FILL, TONE_TEXT, cn, type Tone } from "@/lib/utils";
 
 const SectionHead = ({ kicker, title, lead, tone = "sun" }: { kicker: string; title: string; lead?: string; tone?: Tone }) => (
@@ -178,11 +179,14 @@ export default function Home() {
           </div>
           <Reveal className="mt-12 flex flex-col gap-4 border border-line p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
             <p className="max-w-xl text-lg text-paper/90">
-              <span className="font-semibold text-paper">Registering a school or institution?</span> Enrolment is through the Secretariat. Write to us and we'll send the details.
+              <span className="font-semibold text-paper">Registering a school or institution?</span> The school entry brochure has every category, delegation size and key date. Enrolment is through the Secretariat.
             </p>
-            <a href={mailto(`School registration: OPF ${FESTIVAL.year}`, "School or institution:\nCategory (Junior, Senior or Tertiary):\nContact person and phone:\n")} className="btn-sun shrink-0">
-              Register interest
-            </a>
+            <div className="flex shrink-0 flex-col gap-3 sm:items-end">
+              <a href={mailto(`School registration: OPF ${FESTIVAL.year}`, "School or institution:\nCategory (Junior, Senior or Tertiary):\nContact person and phone:\n")} className="btn-sun">
+                Register interest
+              </a>
+              <DownloadLink file={DOWNLOADS.school} className="text-left" />
+            </div>
           </Reveal>
         </div>
       </section>
