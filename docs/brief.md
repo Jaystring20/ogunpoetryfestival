@@ -91,7 +91,8 @@ Confirm by **15 November 2026** for inclusion in all materials.
 Calista Adebayo (Convener & Executive Producer) · Agboola Oluwatobiloba
 (Programme Manager) · Olufemi Olatunji (Media & Communications Lead) · Joy
 Udeh (Welfare & Mental Health Director) · Odetunde Ola (Lead Event Strategist)
-· Halimah Adegbite (Content & Creative Strategist).
+· Halimah Adegbite (Content & Creative Strategist) · Jeremiah Adeyemi
+(Programme Coordinator).
 
 ## Contact
 
