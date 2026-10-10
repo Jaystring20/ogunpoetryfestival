@@ -192,6 +192,10 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
+              <p className="mt-6 border-t border-line pt-4 text-paper/90">
+                <span className="label mr-3 text-muted">Registration fee</span>
+                <span className="font-semibold text-paper">{DELEGATION.fee}</span>
+              </p>
             </Reveal>
             <Reveal delay={0.08}>
               <h3 className="label text-sun">Key dates</h3>
@@ -219,7 +223,7 @@ export default function Home() {
           </div>
           <Reveal className="mt-12 flex flex-col gap-4 border border-line p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
             <p className="max-w-xl text-lg text-paper/90">
-              <span className="font-semibold text-paper">Registering a school or institution?</span> Registration closes mid-October 2026. Email the Secretariat to confirm your place and categories. The school entry brochure has every detail.
+              <span className="font-semibold text-paper">Registering a school or institution?</span> Registration closes mid-October 2026 and the fee is {DELEGATION.fee}. Email the Secretariat to confirm your place and categories. The school entry brochure has every detail.
             </p>
             <div className="flex shrink-0 flex-col gap-3 sm:items-end">
               <a href={mailto(`School registration: OPF ${FESTIVAL.year}`, "School or institution:\nCategory (Junior, Senior or Tertiary):\nContact person and phone:\n")} className="btn-sun">
