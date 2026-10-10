@@ -75,6 +75,8 @@ export const TRACKS = [
 export const DELEGATION = {
   schools: "20 secondary schools, 10 public and 10 private",
   total: 20,
+  /** Confirmed by the organisers, October 2026. Once per school, not per student. */
+  fee: "₦5,000 per school",
   groups: [
     { count: 2, who: "Junior Secondary writers", note: "written poetry entries" },
     { count: 5, who: "Senior Secondary performers", note: "their video is screened on the day" },
@@ -210,6 +212,6 @@ export const mailto = (subject: string, body = "") =>
 // Brochures in public/downloads. The proposal's bank account is removed:
 // payment details go to confirmed partners by the Secretariat only.
 export const DOWNLOADS = {
-  school: { href: "/downloads/OPF-2026-School-Entry-Brochure.pdf", label: "School entry brochure", size: "52 KB" },
+  school: { href: "/downloads/OPF-2026-School-Entry-Brochure.pdf", label: "School entry brochure", size: "139 KB" },
   sponsorship: { href: "/downloads/OPF-2026-Sponsorship-Proposal.pdf", label: "Sponsorship proposal", size: "1.5 MB" },
 } as const;

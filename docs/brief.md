@@ -43,6 +43,9 @@ they differ. The brochure is downloadable from the site.
 The proposal's earlier wording ("Top 10 schools: Flow Game", "top 3
 students: cash") is replaced by the brochure's.
 
+**Secondary school fee:** ₦5,000 per school (confirmed by the organisers,
+October 2026; added to the brochure's page 6).
+
 **Delegation:** 20 secondary schools (10 public, 10 private), each bringing
 exactly 20 students: 2 Junior writers, 5 Senior performers, 13 general
 attendees for the workshops. Students also get an introduction to digital
@@ -106,7 +109,6 @@ site or in this repo (a personal account).
 
 - Domain name, and social media handles.
 - Which event and year each photo set is from, whether to credit the photographer (Grade A Shots), and who is in the five-person group photo.
-- Secondary schools: is there a registration fee? The brochure mentions "dues" without an amount; only the tertiary fee is stated.
 - Headshots and short bios for the committee.
 - Partner logos, with permission to display them.
 - Whether ESET and the other 2025 allies should appear as current or past partners.
