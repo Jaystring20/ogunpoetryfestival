@@ -31,11 +31,27 @@ The site's data lives in `src/data/festival.ts`; keep both in step.
 
 ## Competition (the OPF Rally)
 
-| Track | Who | Format | Prizes |
-| --- | --- | --- | --- |
-| Junior Secondary | 20 schools, top 2 juniors each | Written poetry, academic review board | Top 3: academic awards, hampers, certificates |
-| Senior Secondary | 20 schools (10 public, 10 private), 5 seniors each | Themed advocacy piece on video, screened | Top 10 schools: Flow Game + certificates; top 3 students: cash + certificates |
-| Tertiary Slam | FCE, FUNAAB, Crescent, Chrisland, DBells, OGSCON | Live stage performance only | 1st ₦90,000 + trophy; 2nd ₦60,000 + plaque |
+From the *OPF 2026 School Entry Brochure*, which wins over the proposal where
+they differ. The brochure is downloadable from the site.
+
+| Track | Theme | Who | Format | Prizes |
+| --- | --- | --- | --- | --- |
+| Junior Secondary | Health & Mental Well-being | Max 2 writers per school, 20 schools | Written poetry, pre-screened by the academic review board; results confidential until the day | Cash 1st to 3rd; academic awards, hampers and certificates for top 3; game packs for top 5 schools |
+| Senior Secondary | Health Advocacy (counterfeit drugs, adulterated food, public healthcare) | 1 video per school, exactly 5 seniors | Pre-recorded spoken word, theatre or protest piece, scored before the day | Top 3 awarded; game packs for top 5 schools |
+| Tertiary Slam | Civic Engagement or The Creative Economy (one per institution) | FCE, FUNAAB, Crescent, Chrisland, DBells, OGSCON (proposal); brochure says "5 participating institutions" | Live performance only, judged on the day | 1st ₦90,000 + trophy; 2nd ₦60,000 + plaque. Fee ₦15,000 to ₦20,000 per institution |
+
+The proposal's earlier wording ("Top 10 schools: Flow Game", "top 3
+students: cash") is replaced by the brochure's.
+
+**Delegation:** 20 secondary schools (10 public, 10 private), each bringing
+exactly 20 students: 2 Junior writers, 5 Senior performers, 13 general
+attendees for the workshops. Students also get an introduction to digital
+literacy and AI-assisted storytelling; selected Junior entries may become an
+AI-illustrated visual piece.
+
+**Key dates:** September 2026 registration opens · mid-October 2026
+registration closes · October to early December entries scored · 5 December
+festival day.
 
 Institutions enrol through the Secretariat; students, educators and
 chaperones receive certificates; selected educators and chaperones receive
@@ -89,7 +105,8 @@ site or in this repo (a personal account).
 
 - Domain name, and social media handles.
 - Which event and year each photo set is from, whether to credit the photographer (Grade A Shots), and who is in the five-person group photo.
-- Registration fees or dues for schools, if any ("dues" are mentioned without amounts).
+- Tertiary Slam: 5 or 6 institutions? The brochure says 5, the proposal names 6.
+- Secondary schools: is there a registration fee? The brochure mentions "dues" without an amount; only the tertiary fee is stated.
 - Headshots and short bios for the committee.
 - Partner logos, with permission to display them.
 - Whether ESET and the other 2025 allies should appear as current or past partners.

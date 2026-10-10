@@ -7,7 +7,7 @@ import { Countdown } from "@/components/Countdown";
 import { Photo } from "@/components/Photo";
 import { DownloadLink } from "@/components/DownloadLink";
 import { PHOTOS } from "@/data/photos";
-import { BACKING, COMMITTEE, DOWNLOADS, FESTIVAL, FOCUS_AREAS, MISSION, RUN_OF_SHOW, TRACKS, TRACK_RECORD, mailto } from "@/data/festival";
+import { BACKING, COMMITTEE, DELEGATION, DOWNLOADS, FESTIVAL, FOCUS_AREAS, KEY_DATES, MISSION, RUN_OF_SHOW, TRACKS, TRACK_RECORD, mailto } from "@/data/festival";
 import { TONE_BORDER, TONE_FILL, TONE_TEXT, cn, type Tone } from "@/lib/utils";
 
 const SectionHead = ({ kicker, title, lead, tone = "sun" }: { kicker: string; title: string; lead?: string; tone?: Tone }) => (
@@ -141,7 +141,7 @@ export default function Home() {
             kicker="The OPF Rally & Competition"
             tone="pink"
             title="Three stages. One theme."
-            lead="Secondary schools and tertiary institutions across Ogun State compete on the theme of artistic expression for advocacy. Students, educators and chaperones all receive certificates and formal commendation."
+            lead="Secondary schools and tertiary institutions across Ogun State compete on the theme of artistic expression for advocacy. Along the way, students get a practical introduction to digital literacy and AI-assisted storytelling. Students, educators and chaperones all receive certificates and formal commendation."
           />
           <div className="mt-16 grid gap-6 lg:grid-cols-3">
             {TRACKS.map((t, i) => (
@@ -149,6 +149,10 @@ export default function Home() {
                 <article className={cn("flex h-full flex-col border-t-8 bg-ink p-8", TONE_BORDER[t.tone as Tone])}>
                   <h3 className="display text-3xl">{t.name}</h3>
                   <dl className="mt-8 space-y-6">
+                    <div>
+                      <dt className="label text-muted">Theme</dt>
+                      <dd className={cn("mt-1 font-semibold", TONE_TEXT[t.tone as Tone])}>{t.theme}</dd>
+                    </div>
                     <div>
                       <dt className="label text-muted">Who</dt>
                       <dd className="mt-1 text-paper/90">{t.pool}</dd>
@@ -159,13 +163,49 @@ export default function Home() {
                     </div>
                     <div>
                       <dt className="label text-muted">Prizes</dt>
-                      <dd className={cn("mt-1 font-semibold", TONE_TEXT[t.tone as Tone])}>{t.prizes}</dd>
+                      <dd className="mt-1 text-paper/90">{t.prizes}</dd>
                     </div>
+                    {"fee" in t && (
+                      <div>
+                        <dt className="label text-muted">Registration fee</dt>
+                        <dd className="mt-1 text-paper/90">{t.fee}</dd>
+                      </div>
+                    )}
                   </dl>
                 </article>
               </Reveal>
             ))}
           </div>
+          <div className="mt-16 grid gap-12 lg:grid-cols-2">
+            <Reveal>
+              <h3 className="label text-sky">Each school's delegation</h3>
+              <p className="mt-4 text-lg text-paper/90">
+                {DELEGATION.schools}. Each brings exactly {DELEGATION.total} students on festival day:
+              </p>
+              <ul className="mt-6 space-y-4">
+                {DELEGATION.groups.map((g, i) => (
+                  <li key={g.who} className="flex items-baseline gap-5">
+                    <span className={cn("display w-12 shrink-0 text-4xl tabular-nums", [TONE_TEXT.sky, TONE_TEXT.pink, TONE_TEXT.teal][i])}>{g.count}</span>
+                    <span className="text-paper/90">
+                      <span className="font-semibold text-paper">{g.who}</span>, {g.note}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <h3 className="label text-sun">Key dates</h3>
+              <ol className="mt-4 border-t border-line">
+                {KEY_DATES.map((d) => (
+                  <li key={d.when} className="grid gap-1 border-b border-line py-4 sm:grid-cols-[12rem_1fr] sm:gap-4">
+                    <span className={cn("label", "highlight" in d ? "text-sun" : "text-muted")}>{d.when}</span>
+                    <span className={cn("highlight" in d ? "font-semibold text-sun" : "text-paper/90")}>{d.what}</span>
+                  </li>
+                ))}
+              </ol>
+            </Reveal>
+          </div>
+
           <div className="mt-16 grid gap-6 md:grid-cols-[1fr_1.4fr_1.4fr]">
             <Reveal>
               <Photo photo={PHOTOS.slamBlazer} frame="aspect-[5/7]" caption="On stage" sizes="(min-width: 768px) 25vw, 100vw" />
@@ -179,7 +219,7 @@ export default function Home() {
           </div>
           <Reveal className="mt-12 flex flex-col gap-4 border border-line p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
             <p className="max-w-xl text-lg text-paper/90">
-              <span className="font-semibold text-paper">Registering a school or institution?</span> The school entry brochure has every category, delegation size and key date. Enrolment is through the Secretariat.
+              <span className="font-semibold text-paper">Registering a school or institution?</span> Registration closes mid-October 2026. Email the Secretariat to confirm your place and categories. The school entry brochure has every detail.
             </p>
             <div className="flex shrink-0 flex-col gap-3 sm:items-end">
               <a href={mailto(`School registration: OPF ${FESTIVAL.year}`, "School or institution:\nCategory (Junior, Senior or Tertiary):\nContact person and phone:\n")} className="btn-sun">

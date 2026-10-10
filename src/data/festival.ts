@@ -1,6 +1,8 @@
 /**
- * Every fact on the site, in one place. Source: the OPF 2026 Prospectus and
- * the OPF 2026 Sponsorship & Partnership Proposal (revised). Change a fact
+ * Every fact on the site, in one place. Source: the OPF 2026 Prospectus, the
+ * OPF 2026 Sponsorship & Partnership Proposal (revised) and, for the
+ * competition and school details, the OPF 2026 School Entry Brochure (which
+ * wins where they differ). Change a fact
  * here and every page that shows it updates.
  *
  * Deliberately left out: the remittance bank account. It belongs to a person,
@@ -44,25 +46,47 @@ export const FOCUS_AREAS = [
 export const TRACKS = [
   {
     name: "Junior Secondary",
-    pool: "20 schools, top 2 juniors per school",
-    format: "Written poetry, evaluated by the academic review board",
-    prizes: "Top 3 students: academic awards, educational hampers and certificates",
+    theme: "Health & Mental Well-being",
+    pool: "Up to 2 student writers from each of the 20 schools",
+    format: "Written poetry, pre-screened and scored by the academic review board before festival day",
+    prizes: "Cash prizes for 1st, 2nd and 3rd. Academic awards, educational hampers and certificates for the top 3 students. Educational game packs for the top 5 schools",
     tone: "sky",
   },
   {
     name: "Senior Secondary",
-    pool: "20 schools (10 public, 10 private), 5 seniors per school",
-    format: "A themed advocacy piece, submitted on video for screening",
-    prizes: "Top 10 schools: Flow Game and certificates. Top 3 students: cash prizes and certificates",
+    theme: "Health Advocacy, such as counterfeit drugs, adulterated food or public healthcare",
+    pool: "One video per school, with exactly 5 senior students",
+    format: "A pre-recorded advocacy piece: spoken word, theatre or protest style. Judges score it before the day",
+    prizes: "Awards for the top 3. Educational game packs for the top 5 schools",
     tone: "pink",
   },
   {
     name: "Tertiary Slam",
+    theme: "Civic Engagement or The Creative Economy (each institution picks one)",
     pool: "6 institutions: FCE, FUNAAB, Crescent, Chrisland, DBells, OGSCON",
-    format: "Live stage performance only, no video entries",
+    format: "Live stage performance only, judged on the day. No video entries",
     prizes: "1st: ₦90,000 and a trophy. 2nd: ₦60,000 and a plaque",
+    fee: "₦15,000 to ₦20,000 per institution",
     tone: "sun",
   },
+] as const;
+
+/** Each of the 20 secondary schools (10 public, 10 private) brings exactly 20 students. */
+export const DELEGATION = {
+  schools: "20 secondary schools, 10 public and 10 private",
+  total: 20,
+  groups: [
+    { count: 2, who: "Junior Secondary writers", note: "written poetry entries" },
+    { count: 5, who: "Senior Secondary performers", note: "their video is screened on the day" },
+    { count: 13, who: "general student attendees", note: "join the event-day workshops and interactive sessions" },
+  ],
+} as const;
+
+export const KEY_DATES = [
+  { when: "September 2026", what: "School outreach and registration open as schools resume" },
+  { when: "Mid-October 2026", what: "All school entries and registrations close", highlight: true },
+  { when: "October to early December", what: "Junior written entries and Senior videos are collected and scored by the judging panel" },
+  { when: "Saturday, 5 December 2026", what: "Festival day, 10:00 AM to 3:00 PM, Cinema Hall, June 13 Cultural Centre, Abeokuta" },
 ] as const;
 
 export const RUN_OF_SHOW = [
