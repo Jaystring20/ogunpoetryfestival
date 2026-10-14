@@ -34,6 +34,9 @@ export function Navbar() {
               {l.label}
             </a>
           ))}
+          <NavLink to="/register" className={({ isActive }) => cn("label transition-colors hover:text-sun", isActive ? "text-sun" : "text-paper/80")}>
+            Register
+          </NavLink>
           <NavLink to="/partner" className={({ isActive }) => cn("label transition-colors hover:text-sun", isActive ? "text-sun" : "text-paper/80")}>
             Partner
           </NavLink>
@@ -54,7 +57,7 @@ export function Navbar() {
       </div>
       {open && (
         <nav className="wrap border-t border-line pb-6 lg:hidden" aria-label="Mobile">
-          {[...LINKS, { to: "/partner", label: "Partner" }].map((l) => (
+          {[...LINKS, { to: "/register", label: "Register your school" }, { to: "/partner", label: "Partner" }].map((l) => (
             <a key={l.to} href={l.to} onClick={() => setOpen(false)} className="display block border-b border-line py-4 text-2xl text-paper">
               {l.label}
             </a>

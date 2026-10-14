@@ -215,3 +215,18 @@ export const DOWNLOADS = {
   school: { href: "/downloads/OPF-2026-School-Entry-Brochure.pdf", label: "School entry brochure", size: "188 KB" },
   sponsorship: { href: "/downloads/OPF-2026-Sponsorship-Proposal.pdf", label: "Sponsorship proposal", size: "1.6 MB" },
 } as const;
+
+/**
+ * School and institution registration form (/register). Entries go to a
+ * Google Sheet through a Google Apps Script web app: see
+ * docs/google-sheet-setup.md. Paste the web app URL here (or set
+ * VITE_REGISTRATION_ENDPOINT in Vercel). While it is empty, the form opens a
+ * pre-filled email to the Secretariat instead, so it always works.
+ */
+export const REGISTRATION = {
+  endpoint: (import.meta.env.VITE_REGISTRATION_ENDPOINT as string | undefined) ?? "",
+  closes: "mid-October 2026",
+  institutionTypes: ["Public secondary school", "Private secondary school", "Tertiary institution"],
+  secondaryCategories: ["Junior Secondary (written poetry)", "Senior Secondary (advocacy video)"],
+  tertiaryThemes: ["Civic Engagement", "The Creative Economy", "Not decided yet"],
+} as const;

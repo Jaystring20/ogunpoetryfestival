@@ -7,7 +7,7 @@ import { Countdown } from "@/components/Countdown";
 import { Photo } from "@/components/Photo";
 import { DownloadLink } from "@/components/DownloadLink";
 import { PHOTOS } from "@/data/photos";
-import { BACKING, COMMITTEE, DELEGATION, DOWNLOADS, FESTIVAL, FOCUS_AREAS, KEY_DATES, MISSION, RUN_OF_SHOW, TRACKS, TRACK_RECORD, mailto } from "@/data/festival";
+import { BACKING, COMMITTEE, DELEGATION, DOWNLOADS, FESTIVAL, FOCUS_AREAS, KEY_DATES, MISSION, RUN_OF_SHOW, TRACKS, TRACK_RECORD } from "@/data/festival";
 import { TONE_BORDER, TONE_FILL, TONE_TEXT, cn, type Tone } from "@/lib/utils";
 
 const SectionHead = ({ kicker, title, lead, tone = "sun" }: { kicker: string; title: string; lead?: string; tone?: Tone }) => (
@@ -223,12 +223,12 @@ export default function Home() {
           </div>
           <Reveal className="mt-12 flex flex-col gap-4 border border-line p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
             <p className="max-w-xl text-lg text-paper/90">
-              <span className="font-semibold text-paper">Registering a school or institution?</span> Registration closes mid-October 2026 and the fee is {DELEGATION.fee}. Email the Secretariat to confirm your place and categories. The school entry brochure has every detail.
+              <span className="font-semibold text-paper">Registering a school or institution?</span> Registration closes mid-October 2026 and the fee is {DELEGATION.fee}. Register online in two minutes. The school entry brochure has every detail.
             </p>
             <div className="flex shrink-0 flex-col gap-3 sm:items-end">
-              <a href={mailto(`School registration: OPF ${FESTIVAL.year}`, "School or institution:\nCategory (Junior, Senior or Tertiary):\nContact person and phone:\n")} className="btn-sun">
-                Register interest
-              </a>
+              <Link to="/register" className="btn-sun">
+                Register your school <ArrowRight className="h-5 w-5" />
+              </Link>
               <DownloadLink file={DOWNLOADS.school} className="text-left" />
             </div>
           </Reveal>
