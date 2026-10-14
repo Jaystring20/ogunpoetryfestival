@@ -66,7 +66,7 @@ export const TRACKS = [
     pool: "6 institutions: FCE, FUNAAB, Crescent, Chrisland, DBells, OGSCON",
     format: "Live stage performance only, judged on the day. No video entries",
     prizes: "1st: ₦90,000 and a trophy. 2nd: ₦60,000 and a plaque",
-    fee: "₦15,000 to ₦20,000 per institution",
+    fee: "₦20,000 per institution",
     tone: "sun",
   },
 ] as const;
@@ -76,7 +76,7 @@ export const DELEGATION = {
   schools: "20 secondary schools, 10 public and 10 private",
   total: 20,
   /** Confirmed by the organisers, October 2026. Once per school, not per student. */
-  fee: "₦5,000 per school",
+  fee: "₦10,000 per school",
   groups: [
     { count: 2, who: "Junior Secondary writers", note: "written poetry entries" },
     { count: 5, who: "Senior Secondary performers", note: "their video is screened on the day" },
@@ -202,7 +202,7 @@ export const IN_KIND = [
 export const VENDOR_BAZAAR = {
   title: "Vendor Bazaar",
   detail: "Paid exhibition space in the foyer for approved vendors, creative enterprises, educational brands and youth-focused businesses. Separate from sponsorship.",
-  fee: "₦30,000 per slot",
+  fee: "₦35,000 per slot",
   note: "Subject to final venue and logistics arrangements.",
 } as const;
 
@@ -212,6 +212,6 @@ export const mailto = (subject: string, body = "") =>
 // Brochures in public/downloads. The proposal's bank account is removed:
 // payment details go to confirmed partners by the Secretariat only.
 export const DOWNLOADS = {
-  school: { href: "/downloads/OPF-2026-School-Entry-Brochure.pdf", label: "School entry brochure", size: "139 KB" },
-  sponsorship: { href: "/downloads/OPF-2026-Sponsorship-Proposal.pdf", label: "Sponsorship proposal", size: "1.5 MB" },
+  school: { href: "/downloads/OPF-2026-School-Entry-Brochure.pdf", label: "School entry brochure", size: "188 KB" },
+  sponsorship: { href: "/downloads/OPF-2026-Sponsorship-Proposal.pdf", label: "Sponsorship proposal", size: "1.6 MB" },
 } as const;

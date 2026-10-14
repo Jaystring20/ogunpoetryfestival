@@ -38,13 +38,13 @@ they differ. The brochure is downloadable from the site.
 | --- | --- | --- | --- | --- |
 | Junior Secondary | Health & Mental Well-being | Max 2 writers per school, 20 schools | Written poetry, pre-screened by the academic review board; results confidential until the day | Cash 1st to 3rd; academic awards, hampers and certificates for top 3; game packs for top 5 schools |
 | Senior Secondary | Health Advocacy (counterfeit drugs, adulterated food, public healthcare) | 1 video per school, exactly 5 seniors | Pre-recorded spoken word, theatre or protest piece, scored before the day | Top 3 awarded; game packs for top 5 schools |
-| Tertiary Slam | Civic Engagement or The Creative Economy (one per institution) | 6 institutions: FCE, FUNAAB, Crescent, Chrisland, DBells, OGSCON (confirmed by the organisers) | Live performance only, judged on the day | 1st ₦90,000 + trophy; 2nd ₦60,000 + plaque. Fee ₦15,000 to ₦20,000 per institution |
+| Tertiary Slam | Civic Engagement or The Creative Economy (one per institution) | 6 institutions: FCE, FUNAAB, Crescent, Chrisland, DBells, OGSCON (confirmed by the organisers) | Live performance only, judged on the day | 1st ₦90,000 + trophy; 2nd ₦60,000 + plaque. Fee ₦20,000 per institution (updated by the organisers, 14 October 2026) |
 
 The proposal's earlier wording ("Top 10 schools: Flow Game", "top 3
 students: cash") is replaced by the brochure's.
 
-**Secondary school fee:** ₦5,000 per school (confirmed by the organisers,
-October 2026; added to the brochure's page 6).
+**Secondary school fee:** ₦10,000 per school (updated by the organisers on
+14 October 2026 from ₦5,000; shown on the brochure's page 6).
 
 **Delegation:** 20 secondary schools (10 public, 10 private), each bringing
 exactly 20 students: 2 Junior writers, 5 Senior performers, 13 general
@@ -83,7 +83,8 @@ Confirm by **15 November 2026** for inclusion in all materials.
 - **Community, below ₦500,000** (open): scaled recognition, Community wall
   logo, certificate, closing and report mention.
 - **In-kind:** Health & Wellness, Hydration, Education & Technology partners.
-- **Vendor Bazaar:** ₦30,000 per foyer slot, separate from sponsorship.
+- **Vendor Bazaar:** ₦35,000 per foyer slot, separate from sponsorship
+  (updated by the organisers on 14 October 2026 from ₦30,000).
 - **Reporting:** every partner receives a post-event impact report
   (attendance, schools, impressions, reach, photos, beneficiary outcomes).
 - **Publicity:** venue branding, campus flyering, radio tours and jingles,
