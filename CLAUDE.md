@@ -26,7 +26,9 @@ Check both before every commit; both must pass.
 | --- | --- |
 | `src/data/festival.ts` | **Every fact on the site**: dates, venue, theme, tracks, prizes, run of show, tiers, committee, contacts. Change facts here only. |
 | `src/pages/Home.tsx` | Home: hero and countdown, photo band, numbers, focus areas (SDGs), competition tracks and prize photos, run of show, track record, backing, committee, gallery, partner CTA. |
+| `src/pages/Register.tsx` | `/register`: school and institution registration form. Sends to a Google Sheet via `src/lib/registration.ts` and `apps-script/registration.gs` (setup: `docs/google-sheet-setup.md`); falls back to a pre-filled email while `REGISTRATION.endpoint` is empty. |
 | `src/pages/Partner.tsx` | `/partner`: why partner, photo band, four sponsorship tiers, in-kind partners, Vendor Bazaar, impact reporting. |
+| `src/pages/Gallery.tsx`, `src/data/gallery.ts`, `src/assets/photos/opf2025/` | `/gallery`: 58 photos from OPF 2025 "The Truth in Our Scars" (from the organisers' Drive folder, watermarked) in four sections, plus the earlier photos; tap to open `<Lightbox>`. `OPF25` also feeds Home and Partner. |
 | `src/data/photos.ts`, `src/assets/photos/` | Real OPF event photos (1600px plus an `-800` copy each) with alt text. Show them with `<Photo>` (`src/components/Photo.tsx`). |
 | `src/components/Tiles.tsx` | The geometric tile motif (see Design). |
 | `src/components/Navbar.tsx`, `Footer.tsx`, `Countdown.tsx`, `Seo.tsx` | Shell pieces. |
@@ -91,9 +93,10 @@ Next, roughly in priority order:
 2. **Photo captions and credits.** Confirm which event and year each set is
    from (Kuta Art Gallery sessions; the hall with the "Poetry Slam" banner),
    and whether to credit Grade A Shots. Captions stay generic until then.
-3. **School and institution registration.** Replace the `mailto` with a form
-   that stores entries (Supabase) and emails the Secretariat (Resend):
-   school, category (Junior, Senior, Tertiary), contact, students.
+3. **School and institution registration.** Form done at `/register`, saving
+   to a Google Sheet through Apps Script. Remaining: the organisers deploy the
+   script and the web app URL goes into `REGISTRATION.endpoint` (or
+   `VITE_REGISTRATION_ENDPOINT`).
 4. **Senior Secondary video entries.** Upload or link field for the advocacy
    video screening.
 5. **Sponsor enquiries.** A form per tier that stores enquiries and alerts the

@@ -5,6 +5,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import Home from "@/pages/Home";
 import Partner from "@/pages/Partner";
+import Register from "@/pages/Register";
+import Gallery from "@/pages/Gallery";
 import NotFound from "@/pages/NotFound";
 
 /** New page: start at the top, or at the #section the link names. */
@@ -30,6 +32,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/partner" element={<Partner />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

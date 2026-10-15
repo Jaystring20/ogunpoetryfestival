@@ -5,6 +5,7 @@ import { Reveal } from "@/components/Reveal";
 import { Photo } from "@/components/Photo";
 import { DownloadLink } from "@/components/DownloadLink";
 import { PHOTOS } from "@/data/photos";
+import { OPF25 } from "@/data/gallery";
 import { DOWNLOADS, FESTIVAL, FOCUS_AREAS, IN_KIND, TIERS, VENDOR_BAZAAR, WHY_PARTNER, mailto } from "@/data/festival";
 import { TONE_BORDER, TONE_FILL, TONE_TEXT, cn, type Tone } from "@/lib/utils";
 
@@ -52,10 +53,18 @@ export default function Partner() {
         </div>
       </section>
 
-      <section aria-label="At past festivals" className="pt-px">
-        <div className="grid gap-px sm:grid-cols-[1.4fr_1fr]">
-          <Photo photo={PHOTOS.awardFirst} frame="aspect-[7/5] sm:h-full sm:aspect-auto" sizes="(min-width: 640px) 60vw, 100vw" />
-          <Photo photo={PHOTOS.audienceClapping} frame="aspect-[5/7] sm:aspect-[4/5]" position="50% 30%" sizes="(min-width: 640px) 40vw, 100vw" />
+      <section aria-labelledby="seen-title" className="bg-ink-raised py-20 sm:py-24">
+        <div className="wrap">
+          <Reveal className="max-w-3xl">
+            <p className="label text-teal">Seen at OPF 2025</p>
+            <h2 id="seen-title" className="display mt-4 text-4xl leading-[0.98] sm:text-5xl">Your brand, in the room.</h2>
+            <p className="mt-4 text-lg text-muted">Partners are on the backdrop, on the team's shirts and in front of every guest who walks in.</p>
+          </Reveal>
+          <div className="mt-12 grid gap-4 md:grid-cols-3">
+            <Photo photo={OPF25["045"]} frame="aspect-[4/3]" caption="Golden Penny Foods at OPF 2025" sizes="(min-width: 768px) 33vw, 100vw" />
+            <Photo photo={OPF25["002"]} frame="aspect-[4/3]" caption="The partner backdrop, OPF 2025" sizes="(min-width: 768px) 33vw, 100vw" />
+            <Photo photo={PHOTOS.awardFirst} frame="aspect-[4/3]" caption="Prize giving" sizes="(min-width: 768px) 33vw, 100vw" />
+          </div>
         </div>
       </section>
 
