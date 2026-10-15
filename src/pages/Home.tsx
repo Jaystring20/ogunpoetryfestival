@@ -7,6 +7,7 @@ import { Countdown } from "@/components/Countdown";
 import { Photo } from "@/components/Photo";
 import { DownloadLink } from "@/components/DownloadLink";
 import { PHOTOS } from "@/data/photos";
+import { OPF25 } from "@/data/gallery";
 import { BACKING, COMMITTEE, DELEGATION, DOWNLOADS, FESTIVAL, FOCUS_AREAS, KEY_DATES, MISSION, RUN_OF_SHOW, TRACKS, TRACK_RECORD } from "@/data/festival";
 import { TONE_BORDER, TONE_FILL, TONE_TEXT, cn, type Tone } from "@/lib/utils";
 
@@ -275,6 +276,17 @@ export default function Home() {
             ))}
           </ol>
 
+          <figure className="mt-12">
+            <ul className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+              {[OPF25["030"], OPF25["029"], OPF25["017"], OPF25["027"]].map((p) => (
+                <li key={p.src}>
+                  <Photo photo={p} frame="aspect-[4/3]" sizes="(min-width: 1024px) 25vw, 50vw" />
+                </li>
+              ))}
+            </ul>
+            <figcaption className="label mt-3 text-xs text-muted">The Truth in Our Scars, 2025</figcaption>
+          </figure>
+
           <Reveal className="mt-20 border-y border-line py-10">
             <p className="label text-muted">Backed by</p>
             <p className="display mt-4 text-2xl sm:text-3xl">{BACKING.ministry}</p>
@@ -318,8 +330,11 @@ export default function Home() {
             title="Moments from the mic."
             lead="Open mics, workshops and festival days. This is what it looks like when young people take the stage."
           />
-          <ul className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[PHOTOS.reading, PHOTOS.spokenWord, PHOTOS.bench, PHOTOS.readerFloral, PHOTOS.speakerMural].map((p, i) => (
+          <Link to="/gallery" className="btn-line mt-8">
+            See all the photos <ArrowRight className="h-5 w-5" />
+          </Link>
+          <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[OPF25["000"], OPF25["059"], OPF25["052"], PHOTOS.reading, OPF25["039"]].map((p, i) => (
               <li key={p.src} className={cn(i === 1 && "sm:row-span-2 lg:col-start-2 lg:row-start-1")}>
                 <Reveal className="h-full">
                   <Photo

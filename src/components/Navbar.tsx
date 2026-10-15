@@ -9,7 +9,6 @@ const LINKS = [
   { to: "/#competition", label: "Competition" },
   { to: "/#programme", label: "Programme" },
   { to: "/#about", label: "About" },
-  { to: "/#gallery", label: "Gallery" },
 ];
 
 export function Navbar() {
@@ -34,6 +33,9 @@ export function Navbar() {
               {l.label}
             </a>
           ))}
+          <NavLink to="/gallery" className={({ isActive }) => cn("label transition-colors hover:text-sun", isActive ? "text-sun" : "text-paper/80")}>
+            Gallery
+          </NavLink>
           <NavLink to="/register" className={({ isActive }) => cn("label transition-colors hover:text-sun", isActive ? "text-sun" : "text-paper/80")}>
             Register
           </NavLink>
@@ -57,7 +59,7 @@ export function Navbar() {
       </div>
       {open && (
         <nav className="wrap border-t border-line pb-6 lg:hidden" aria-label="Mobile">
-          {[...LINKS, { to: "/register", label: "Register your school" }, { to: "/partner", label: "Partner" }].map((l) => (
+          {[...LINKS, { to: "/gallery", label: "Gallery" }, { to: "/register", label: "Register your school" }, { to: "/partner", label: "Partner" }].map((l) => (
             <a key={l.to} href={l.to} onClick={() => setOpen(false)} className="display block border-b border-line py-4 text-2xl text-paper">
               {l.label}
             </a>

@@ -25,7 +25,7 @@ export function Photo({
   const img = (
     <img
       src={photo.src}
-      srcSet={`${photo.small} 800w, ${photo.src} ${photo.w}w`}
+      srcSet={`${photo.small} ${photo.smallW ?? 800}w, ${photo.src} ${photo.w}w`}
       sizes={sizes}
       width={photo.w}
       height={photo.h}

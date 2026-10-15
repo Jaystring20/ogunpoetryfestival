@@ -3,7 +3,8 @@
 // Alt text describes what is in the frame; never name people unless the
 // organisers confirm who they are.
 
-type Photo = { src: string; small: string; w: number; h: number; alt: string };
+/** `smallW` is the width of the small copy (800 unless set). */
+type Photo = { src: string; small: string; smallW?: number; w: number; h: number; alt: string };
 
 const files = import.meta.glob<string>("../assets/photos/*.jpg", { eager: true, import: "default" });
 const url = (name: string) => {
